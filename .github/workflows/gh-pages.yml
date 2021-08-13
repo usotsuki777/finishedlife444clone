@@ -36,7 +36,7 @@ jobs:
             ${{ runner.OS }}-
       - name: Build
         run: |
-          npm ci --legacy-peer-deps
+          npm ci --strict-peer-depss
           npm run build
           npm run export
       - name: Deploy
