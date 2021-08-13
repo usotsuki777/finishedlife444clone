@@ -1,0 +1,15 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title-shadow {
+  text-shadow: 3px 3px 3px black;
+}
+
+
+@layer utilities {
+  .link-blue {
+    @apply text-blue-600 hover:text-blue-400;
+  }
+}
