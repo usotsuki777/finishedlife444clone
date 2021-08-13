@@ -14,7 +14,6 @@ import Guaa from '../public/img/Guaaaaaa.png'
 
 
 
-
 const Home: NextPage = () => {
 
   // iamge path

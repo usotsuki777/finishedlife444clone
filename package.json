@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev --port 8100",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
