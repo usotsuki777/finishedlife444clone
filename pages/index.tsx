@@ -70,7 +70,8 @@ const Home: NextPage = () => {
             <li>
               <a className="link-blue" target="_blank" rel="noreferrer" href="https://www.nicovideo.jp/user/97308510">
                 Niconico
-              </a></li>
+              </a>
+            </li>
             <li>
               <a className="link-blue" target="_blank" rel="noreferrer" href="https://twitter.com/finishedlife444">Twitter</a>
             </li>
@@ -78,7 +79,6 @@ const Home: NextPage = () => {
               <a className="link-blue" target="_blank" rel="noreferrer" href="https://github.com/MASA20201203">Github</a>
             </li>
           </ul>
-
 
         </div>
 

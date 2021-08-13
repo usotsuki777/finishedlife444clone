@@ -20,7 +20,6 @@ function MainLayout({ children }: Props) {
                                 </div>
                             </div>
 
-
                         </div>
 
                         <div className="flex-1" />
