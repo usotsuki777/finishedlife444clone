@@ -1,5 +1,4 @@
- 
-name: Deploy to Github Pages
+name: github pages
 
 on:
   push:
@@ -23,7 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
+
       - name: Use NPM 7
         run: npm i -g npm@latest
 
