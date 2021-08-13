@@ -1,6 +1,13 @@
 # about this repository
 
-this repository is completely disposable.
+This repository is completely `disposable`.
 
 
-https://usotsuki777.github.io/finishedlife444clone/
+## info
+
+This repository is rewitten of [this website](https://masa20201203.github.io/finishedlife444/) on [finishedlife444](https://github.com/MASA20201203/finishedlife444)
+
+
+## URL
+
+[demo](https://finishedlife444clone.vercel.app/)
