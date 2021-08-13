@@ -1,46 +1,36 @@
-name: Deploy to Github Pages
+name: Deploy Next.js app
 
 on:
   push:
-    branches:
-      - main
-
-  workflow_dispatch:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  deployment:
+  build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
-          
-      - name: Use NPM 7
-        run: npm i -g npm@latest
+          node-version: 14.x
 
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}-
-      - name: Build
-        run: |
-          npm ci --strict-peer-depss
-          npm run build
-          npm run export
-      - name: Deploy
+      - name: Install NPM packages
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+        env:
+          URL_PREFIX: myapp
+
+      - name: Export Next.js app
+        run: npm run export
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./out
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: out
