@@ -7,6 +7,7 @@ import { useState } from "react"
 // components
 import { MainLayout } from "../layouts/MainLayout"
 import { Title } from '../components/Title'
+import { Audio } from "../components/Audio"
 
 // images
 import FirstPic from '../public/img/First-Comment.png';
@@ -15,11 +16,11 @@ import Guaa from '../public/img/Guaaaaaa.png'
 type LinkProps = {
   name: string,
   url: string
-}
+} // ! LinkProps
 
 
-// links
-const links: LinkProps[] = [
+// social link
+const socialLinks: LinkProps[] = [
   {
     name: 'Niconico',
     url: "https://www.nicovideo.jp/user/97308510"
@@ -32,20 +33,32 @@ const links: LinkProps[] = [
     name: 'Github',
     url: "https://github.com/MASA20201203"
   },
-];
+]; // ! socialLinks
+
+// page link
+const pageLinks: LinkProps[] = [
+  {
+    name: '自己紹介',
+    url: "/self-introduction"
+  },
+  {
+    name: '学習履歴',
+    url: "/learning-history"
+  },
+] // ! pageLinks
 
 
 const Home: NextPage = () => {
 
   // iamge path
-  const image = [FirstPic, Guaa]
+  const images = [FirstPic, Guaa];
 
   // image state
-  const [img, setImage] = useState(0)
+  const [img, setImage] = useState(0);
 
   const onClickImage = () => {
     img == 0 ? setImage(1) : setImage(0);
-  }
+  } // ! onClickImage()
 
 
   return (
@@ -63,23 +76,26 @@ const Home: NextPage = () => {
         </div>
 
         <div className="text-center mt-10">
-          <Image className="cursor-pointer" onClick={onClickImage} src={image[img]} alt="Picture of Masa" />
+          <Image className="cursor-pointer" onClick={onClickImage} src={images[img]} alt="Picture of Masa" />
         </div>
 
         <div className="">
           <h2 className="text-2xl font-bold ml-3.5">このサイトの説明</h2>
-          <p className="  mt-3 ml-3 break-words leading-10">このサイトは、まさ＠人生ｵﾜﾀ＼(^o^)／のサイトです。</p>
-          <p className=" ml-3 break-words leading-10">運営者は人生が終わった29歳無職借金110万のニコ生底辺配信者です。</p>
+          <p className="mt-3 ml-3 break-words leading-10">このサイトは、まさ＠人生ｵﾜﾀ＼(^o^)／のサイトです。</p>
+          <p className="ml-3 break-words leading-10">運営者は人生が終わった29歳無職借金110万のニコ生底辺配信者です。</p>
 
         </div>
 
         <div className="mt-4">
 
           <h2 className="text-2xl font-bold ml-3.5">私について</h2>
-          <ul className="mt-3 ml-10 list-inside list-disc">
-            <li>自己紹介(WIP)</li>
-            <li>学習履歴(WIP)</li>
 
+          {/* page links */}
+          <ul className="mt-3 ml-10 list-inside list-disc">
+
+            {pageLinks.map((item, k) =>
+              <li key={k}>{item.name} ( WIP )</li>
+            )}
           </ul>
 
 
@@ -93,10 +109,10 @@ const Home: NextPage = () => {
             <div className="text-sm font-bold mt-2 ml-0.5">(※別タブで開きます)</div>
           </div>
 
-          {/* external links */}
+          {/* socail links */}
           <ul className="mt-3 ml-10 list-inside list-disc">
 
-            {links.map((item, k) => <li key={k}>
+            {socialLinks.map((item, k) => <li key={k}>
               <a className="link-blue" target="_blank" rel="noreferrer" href={item.url}>
                 {item.name}
               </a>
@@ -114,10 +130,8 @@ const Home: NextPage = () => {
 
         <div className="my-4 pb-10 ml-2">
 
-          <audio controls>
-            <source src={'/audio/audios_Yorosikune.mp3'} type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+
+          <Audio path={'audio/audios_Yorosikune.mp3'} />
 
         </div>
 
