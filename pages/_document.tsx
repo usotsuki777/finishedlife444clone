@@ -5,7 +5,7 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0" />
+
                     {/* read google fornt */}
                     <link
                         href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto&display=swap"
