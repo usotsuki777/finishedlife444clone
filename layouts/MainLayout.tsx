@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react'
 
+import { RightNav } from "../components/RightNav"
+
 type Props = {
     children: ReactNode
 }
@@ -22,7 +24,9 @@ function MainLayout({ children }: Props) {
 
                         </div>
 
-                        <div className="flex-1" />
+                        <div className="flex-1" >
+                            <RightNav />
+                        </div>
 
                     </div>
                 </div>
