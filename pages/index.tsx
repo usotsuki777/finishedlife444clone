@@ -14,6 +14,8 @@ import Guaa from '../public/img/Guaaaaaa.png'
 
 
 
+
+
 const Home: NextPage = () => {
 
   // iamge path
@@ -53,6 +55,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className="mt-4">
+
           <h2 className="text-2xl font-bold ml-3.5">私について</h2>
           <ul className="mt-3 ml-10 list-inside list-disc">
             <li className="link-blue">自己紹介(WIP)</li>
@@ -64,7 +67,12 @@ const Home: NextPage = () => {
         </div>
 
         <div className="mt-4">
-          <h2 className="text-2xl font-bold ml-3.5">外部リンク(*外部リンクで開きます)</h2>
+          <div className="flex">
+            <div>
+              <h2 className="text-2xl font-bold ml-3.5">外部リンク</h2>
+            </div>
+            <div className="text-sm font-bold mt-2 ml-0.5">(※外部リンクで開きます)</div>
+          </div>
 
           <ul className="mt-3 ml-10 list-inside list-disc">
             <li>
@@ -82,9 +90,18 @@ const Home: NextPage = () => {
 
         </div>
 
-        <div className="mt-4 pb-10">
+        <div className="my-4">
           <h2 className="text-2xl font-bold ml-3.5">メッセージ</h2>
           <p className="mt-3 ml-3 break-words leading-10">これからよろしくな！</p>
+
+        </div>
+
+        <div className="my-4 pb-10 ml-2">
+
+          <audio controls>
+            <source src={'/audio/audios_Yorosikune.mp3'} type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
 
         </div>
 
