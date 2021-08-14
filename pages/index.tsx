@@ -13,6 +13,12 @@ import { Audio } from "../components/Audio"
 import FirstPic from '../public/img/First-Comment.png';
 import Guaa from '../public/img/Guaaaaaa.png'
 
+// Masa's Info
+enum Info {
+  Age = 29,
+  Debt = 110
+} // ! Info
+
 type LinkProps = {
   name: string,
   url: string
@@ -34,6 +40,7 @@ const socialLinks: LinkProps[] = [
     url: "https://github.com/MASA20201203"
   },
 ]; // ! socialLinks
+
 
 // page link
 const pageLinks: LinkProps[] = [
@@ -81,8 +88,8 @@ const Home: NextPage = () => {
 
         <div className="">
           <h2 className="text-2xl font-bold ml-3.5">このサイトの説明</h2>
-          <p className="mt-3 ml-3 break-words leading-10">このサイトは、まさ＠人生ｵﾜﾀ＼(^o^)／のサイトです。</p>
-          <p className="ml-3 break-words leading-10">運営者は人生が終わった29歳無職借金110万のニコ生底辺配信者です。</p>
+          <p className="mt-3 ml-3 break-words leading-10">このサイトは、まさ＠人生ｵﾜﾀ＼(^o^)／のサイトの<strong className="font-bold underline text-lg text-gray-800">クローン</strong>です。</p>
+          <p className="ml-3 break-words leading-10">運営者は人生が終わった{Info.Age}歳無職借金{Info.Debt}万のニコ生底辺配信者です。</p>
 
         </div>
 
@@ -128,8 +135,8 @@ const Home: NextPage = () => {
 
         </div>
 
+        {/* audio */}
         <div className="my-4 pb-10 ml-2">
-
 
           <Audio path={'audio/audios_Yorosikune.mp3'} />
 
