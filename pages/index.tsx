@@ -12,8 +12,27 @@ import { Title } from '../components/Title'
 import FirstPic from '../public/img/First-Comment.png';
 import Guaa from '../public/img/Guaaaaaa.png'
 
+type LinkProps = {
+  name: string,
+  url: string
+}
 
 
+// links
+const links: LinkProps[] = [
+  {
+    name: 'Niconico',
+    url: "https://www.nicovideo.jp/user/97308510"
+  },
+  {
+    name: 'Twitter',
+    url: "https://twitter.com/finishedlife444"
+  },
+  {
+    name: 'Github',
+    url: "https://github.com/MASA20201203"
+  },
+];
 
 
 const Home: NextPage = () => {
@@ -58,8 +77,8 @@ const Home: NextPage = () => {
 
           <h2 className="text-2xl font-bold ml-3.5">私について</h2>
           <ul className="mt-3 ml-10 list-inside list-disc">
-            <li className="link-blue">自己紹介(WIP)</li>
-            <li className="link-blue">学習履歴(WIP)</li>
+            <li>自己紹介(WIP)</li>
+            <li>学習履歴(WIP)</li>
 
           </ul>
 
@@ -71,21 +90,18 @@ const Home: NextPage = () => {
             <div>
               <h2 className="text-2xl font-bold ml-3.5">外部リンク</h2>
             </div>
-            <div className="text-sm font-bold mt-2 ml-0.5">(※外部リンクで開きます)</div>
+            <div className="text-sm font-bold mt-2 ml-0.5">(※別タブで開きます)</div>
           </div>
 
+          {/* external links */}
           <ul className="mt-3 ml-10 list-inside list-disc">
-            <li>
-              <a className="link-blue" target="_blank" rel="noreferrer" href="https://www.nicovideo.jp/user/97308510">
-                Niconico
+
+            {links.map((item, k) => <li key={k}>
+              <a className="link-blue" target="_blank" rel="noreferrer" href={item.url}>
+                {item.name}
               </a>
-            </li>
-            <li>
-              <a className="link-blue" target="_blank" rel="noreferrer" href="https://twitter.com/finishedlife444">Twitter</a>
-            </li>
-            <li>
-              <a className="link-blue" target="_blank" rel="noreferrer" href="https://github.com/MASA20201203">Github</a>
-            </li>
+            </li>)}
+
           </ul>
 
         </div>
@@ -106,20 +122,10 @@ const Home: NextPage = () => {
         </div>
 
 
-
-
-
-
-
-
-
-
       </MainLayout>
 
 
-
-
-    </div >
+    </div>
   )
 }
 
