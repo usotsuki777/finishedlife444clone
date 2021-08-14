@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { useState } from "react"
 
@@ -49,8 +50,8 @@ const pageLinks: LinkProps[] = [
     url: "/self-introduction"
   },
   {
-    name: '学習履歴',
-    url: "/learning-history"
+    name: '学習履歴 (WIP)',
+    url: "/" // /learning-history
   },
 ] // ! pageLinks
 
@@ -101,7 +102,12 @@ const Home: NextPage = () => {
           <ul className="mt-3 ml-10 list-inside list-disc">
 
             {pageLinks.map((item, k) =>
-              <li key={k}>{item.name} ( WIP )</li>
+              <li key={k}>
+                <Link href={item.url}>
+                  <a className="link-blue">  {item.name}
+                  </a>
+                </Link>
+              </li>
             )}
           </ul>
 
