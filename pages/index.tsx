@@ -72,7 +72,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>人生ｵﾜﾀ＼(^o^)／のクローン with next.js</title>
+        <title>{process.env.appName}</title>
         <meta name="description" content="まさ＠人生ｵﾜﾀ＼(^o^)／のホームページのクローンです" />
 
       </Head>

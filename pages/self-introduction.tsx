@@ -40,7 +40,7 @@ const SelfIntroduction: NextPage = () => {
     return (<div>
 
         <Head>
-            <title>人生ｵﾜﾀ＼(^o^)／のクローン with next.js</title>
+            <title>自己紹介 - {process.env.appName}</title>
             <meta name="description" content="まさ＠人生ｵﾜﾀ＼(^o^)／のホームページのクローンです" />
 
         </Head>
