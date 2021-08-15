@@ -5,4 +5,7 @@
 
 module.exports = {
   reactStrictMode: true,
+  env: {
+    appName: '人生ｵﾜﾀ＼(^o^)／のクローン with next.js',
+  },
 };
