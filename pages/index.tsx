@@ -14,9 +14,12 @@ import { Audio } from "../components/Audio"
 import FirstPic from '../public/img/First-Comment.png';
 import Guaa from '../public/img/Guaaaaaa.png'
 
+// lib
+import { getAge } from "../libs/date"
+
 // Masa's Info
 enum Info {
-  Age = 29,
+  Birthday = '1993-4-10',
   Debt = 110
 } // ! Info
 
@@ -24,6 +27,7 @@ type LinkProps = {
   name: string,
   url: string
 } // ! LinkProps
+
 
 
 // social link
@@ -90,7 +94,7 @@ const Home: NextPage = () => {
         <div className="">
           <h2 className="text-2xl font-bold ml-3.5">このサイトの説明</h2>
           <p className="mt-3 ml-3 break-words leading-10">このサイトは、<a target="_blank" className="font-bold hover:text-blue-800" rel="noreferrer" href="https://masa20201203.github.io/finishedlife444/index.html">まさ＠人生ｵﾜﾀ＼(^o^)／</a>のサイトの<strong className="underline text-lg text-gray-800">クローン</strong>です。</p>
-          <p className="ml-3 break-words leading-10">運営者は人生が終わった{Info.Age}歳無職借金{Info.Debt}万のニコ生底辺配信者です。</p>
+          <p className="ml-3 break-words leading-10">運営者は人生が終わった{getAge(Info.Birthday)}歳無職借金{Info.Debt}万のニコ生底辺配信者です。</p>
 
         </div>
 
